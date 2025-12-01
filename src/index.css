@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Dark Modern Theme */
 :root {
   --color-bg: #020617;
   --color-surface: #020617;
@@ -19,18 +18,15 @@ body {
   font-family: system-ui, sans-serif;
 }
 
-/* Layout helpers */
-.main-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 3rem 1rem;
+.container {
+  @apply max-w-5xl mx-auto;
 }
 
 /* Typography */
 .heading-xl { @apply text-3xl sm:text-4xl font-semibold; }
 .heading-lg { @apply text-2xl sm:text-3xl font-semibold; }
-.heading-md { @apply text-xl font-semibold; }
-.body-text { @apply text-[var(--color-muted)] leading-relaxed; }
+.heading-md { @apply text-xl font-semibold mb-2; }
+.body-text { @apply text-(--color-muted) leading-relaxed; }
 
 /* Components */
 .card {

@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 // Vul dit aan met de NAAM van jouw GitHub repository!
 const basePath = '/portfolio/';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [tailwindcss(), react() ],
   base: basePath,
   build: {
     rollupOptions: {

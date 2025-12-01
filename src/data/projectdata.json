@@ -1,0 +1,72 @@
+{
+  "projects": [
+    {
+      "id": "asteroids-3d",
+      "title": "Asteroids 3D",
+      "tagline": "Classic arcade game in modern 3D",
+      "thumbnail": "https://picsum.photos/seed/asteroids/800/600",
+      "screenshots": [
+        "https://picsum.photos/seed/asteroids1/1200/800",
+        "https://picsum.photos/seed/asteroids2/1200/800"
+      ],
+      "youtube": "",
+      "tags": ["Unity", "C#", "3D"],
+      "projectRole": "Gameplay Programmer",
+      "projectGoals": "Recreate arcade mechanics in Unity.",
+      "timeline": "2 weeks",
+      "mechanics": [
+        {
+          "subtitle": "Movement System",
+          "description": "Forward thrust + rotation using Unity physics.",
+          "image": "https://placehold.co/800x600/0f172a/e5e7eb?text=Movement+System"
+        }
+      ]
+    },
+
+    {
+      "id": "xr-escape-room",
+      "title": "XR Escape Room",
+      "tagline": "Puzzle escape room built in VR",
+      "thumbnail": "https://picsum.photos/seed/xr/800/600",
+      "screenshots": [
+        "https://picsum.photos/seed/xr1/1200/800",
+        "https://picsum.photos/seed/xr2/1200/800"
+      ],
+      "youtube": "",
+      "tags": ["Unity", "XR", "Interaction Toolkit"],
+      "projectRole": "XR Designer",
+      "projectGoals": "Create interactions using XR Interaction Toolkit.",
+      "timeline": "3 weeks",
+      "mechanics": [
+        {
+          "subtitle": "Grab Interaction",
+          "description": "Physics-based grabbing for VR controllers.",
+          "image": "https://placehold.co/800x600/0f172a/e5e7eb?text=Grab+Mechanic"
+        }
+      ]
+    },
+
+    {
+      "id": "topdown-shooter",
+      "title": "Topdown Shooter",
+      "tagline": "Twin-stick arena shooter",
+      "thumbnail": "https://picsum.photos/seed/shooter/800/600",
+      "screenshots": [
+        "https://picsum.photos/seed/shooter1/1200/800",
+        "https://picsum.photos/seed/shooter2/1200/800"
+      ],
+      "youtube": "",
+      "tags": ["Unity", "C#", "AI"],
+      "projectRole": "Programmer",
+      "projectGoals": "Movement, shooting & basic enemy AI.",
+      "timeline": "1 week",
+      "mechanics": [
+        {
+          "subtitle": "Enemy AI",
+          "description": "Basic chase-and-attack logic.",
+          "image": "https://placehold.co/800x600/0f172a/e5e7eb?text=Enemy+AI"
+        }
+      ]
+    }
+  ]
+}

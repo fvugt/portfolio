@@ -1,4 +1,4 @@
-@tailwind;
+@import "tailwindcss";
 
 /* Dark Modern Theme */
 :root {

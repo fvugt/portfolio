@@ -1,79 +1,104 @@
 import { Link } from "react-router-dom";
 import projectData from "../data/projectdata.json";
+import { siteConfig } from "../siteConfig";
+import ProjectCard from "../components/ProjectCard";
 
 export default function Home() {
-  const latest = projectData.projects[0]; // meest recente bovenaan lijst
-
   return (
-    <section className="container mt-4">
+    <main>
+      <section className="container py-8 md:py-12">
 
-      {/* ⭐ HERO SECTIE ⭐ */}
-      <div className="mb-12 p-6 rounded-xl border border-(--color-border) bg-(--color-surface)">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        {/* ⭐ HERO SECTION ⭐ */}
+        <div className="mb-16" id="home">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
 
-          {/* Afbeelding */}
-          <div className="overflow-hidden rounded-lg">
-            <img
-              src={latest.thumbnail}
-              alt={latest.title}
-              className="w-full h-56 md:h-64 object-cover rounded-lg"
-            />
-          </div>
+            {/* Profile Image */}
+            <div className="relative shrink-0">
+              <div className="absolute inset-0 bg-accent/20 blur-2xl rounded-full" />
+              <img
+                src={siteConfig.aboutImage}
+                alt={siteConfig.name}
+                className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-accent/30 shadow-lg"
+              />
+            </div>
 
-          {/* Tekst */}
-          <div className="flex flex-col gap-3">
-            <h2 className="heading-xl text-(--color-text)">
-              Nieuwste Project: {latest.title}
-            </h2>
+            {/* Text Content */}
+            <div className="flex flex-col gap-4 text-center md:text-left flex-1">
+              <div>
+                <p className="text-sm uppercase tracking-widest text-accent font-semibold mb-2">
+                  {siteConfig.role}
+                </p>
+                <h1 className="text-4xl md:text-5xl font-bold text-text mb-3">
+                  Hi, ik ben <span className="text-accent">{siteConfig.name}</span>
+                </h1>
+              </div>
+              
+              <p className="text-lg text-muted leading-relaxed max-w-xl">
+                {siteConfig.tagline}
+              </p>
 
-            <p className="body-text text-(--color-muted) max-w-md">
-              {latest.tagline}
-            </p>
+              <div className="flex gap-3 justify-center md:justify-start mt-4">
+                <a
+                  href="#contact"
+                  className="
+                    inline-flex items-center gap-2 px-8 py-4 rounded-xl
+                    bg-(--accent) text-(--accent-text) font-bold text-lg
+                    hover:bg-(--accent-hover) hover:scale-105 hover:shadow-xl
+                    transition-all duration-200 shadow-lg
+                  "
+                >
+                  Neem contact op
+                </a>
+                <a
+                  href="#about"
+                  className="
+                    inline-flex items-center gap-2 px-8 py-4 rounded-xl
+                    border-2 border-(--bordercolor) text-(--text) font-bold text-lg
+                    hover:border-(--accent) hover:text-(--accent) hover:scale-105
+                    transition-all duration-200
+                  "
+                >
+                  Meer over mij
+                </a>
+              </div>
+            </div>
 
-            <Link
-              to={`/projects/${latest.id}`}
-              className="
-                inline-flex items-center gap-2 px-4 py-2 mt-2
-                bg-(--color-accent) text-black font-semibold
-                rounded-md hover:brightness-90 transition
-                w-fit
-              "
-            >
-              Bekijk project →
-            </Link>
+            {/* Decorative Graphic */}
+            <div className="hidden lg:flex relative w-64 h-64 shrink-0 items-center justify-center">
+              {/* Floating circles */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-accent/5 rounded-full blur-xl" />
+              
+              {/* Grid pattern */}
+              <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="1" cy="1" r="1" fill="currentColor" className="text-(--accent)" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+              </svg>
+
+              {/* Code brackets */}
+              <div className="relative text-(--accent)/30 font-mono text-6xl font-bold">
+                {'</>'}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Titel + Intro */}
-      <h1 className="heading-xl mb-6">Mijn Projecten</h1>
+        {/* PROJECTS SECTION */}
+        <div className="space-y-8" id="projects">
+          <h2 className="text-3xl font-bold text-text pb-4 border-b border-(--bordercolor)">Mijn Projecten</h2>
 
-      <p className="body-text max-w-xl mb-10">
-        Hieronder vind je een selectie van mijn projecten. Klik op een project
-        om meer te zien.
-      </p>
-
-      {/* Project grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projectData.projects.map((project) => (
-          <Link
-            key={project.id}
-            to={`/projects/${project.id}`}
-            className="card hover:shadow-xl transition cursor-pointer"
-          >
-            <img
-              src={project.thumbnail}
-              alt={project.title}
-              className="w-full h-40 object-cover rounded-md mb-3"
-            />
-
-            <h2 className="heading-md mb-1">{project.title}</h2>
-            <p className="text-sm text-(--color-muted)">
-              {project.tagline}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </section>
+          {/* Project grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projectData.projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

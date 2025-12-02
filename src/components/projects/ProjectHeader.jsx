@@ -5,7 +5,7 @@ export default function ProjectHeader({ project }) {
       <img src={project.thumbnail} alt={project.title} className="w-full h-48 sm:h-64 object-cover" />
 
       {/* Gradient overlay voor leesbaarheid */}
-      <div className="absolute inset-0 bg-gradient-to-t from-(--color-bg) via-black/50 to-transparent opacity-90" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent" />
 
       {/* Text overlay */}
       <div className="absolute bottom-4 left-4">

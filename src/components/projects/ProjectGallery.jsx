@@ -21,7 +21,7 @@ export default function ProjectGallery({ project }) {
 
   return (
     <div className="mb-4 ml-4 mr-4">
-      <h2 className="heading-md text-(--color-text)">Gallery</h2>
+      <h2 className="heading-md text-(--text)">Gallery</h2>
 
       <div className="space-y-6 mt-4">
         {slides.length > 0 && (
@@ -58,12 +58,8 @@ export default function ProjectGallery({ project }) {
                   onClick={prevSlide}
                   className="
                     absolute left-4 top-1/2 -translate-y-1/2
-                    p-4 rounded-full
-                    bg-black/60 hover:bg-black/80
-                    text-white
-                    shadow-xl
-                    backdrop-blur-md
-                    transition-all
+                    p-4 rounded-full gallery-control
+                    shadow-xl backdrop-blur-md
                     ring-2 ring-white/20 hover:ring-white/40
                   "
                 >
@@ -84,12 +80,8 @@ export default function ProjectGallery({ project }) {
                   onClick={nextSlide}
                   className="
                     absolute right-4 top-1/2 -translate-y-1/2
-                    p-4 rounded-full
-                    bg-black/60 hover:bg-black/80
-                    text-white
-                    shadow-xl
-                    backdrop-blur-md
-                    transition-all
+                    p-4 rounded-full gallery-control
+                    shadow-xl backdrop-blur-md
                     ring-2 ring-white/20 hover:ring-white/40
                   "
                 >
@@ -112,8 +104,8 @@ export default function ProjectGallery({ project }) {
                       key={idx}
                       onClick={() => setCurrentIndex(idx)}
                       className={`
-                        w-2 h-2 rounded-full transition-all
-                        ${idx === currentIndex ? "bg-white w-4" : "bg-white/50 hover:bg-white/80"}
+                        w-2 h-2 rounded-full cursor-pointer
+                        ${idx === currentIndex ? "gallery-dot-active w-4" : "gallery-dot"}
                       `}
                     />
                   ))}

@@ -34,7 +34,7 @@ export default function ProjectDetails() {
 
   return (
     <main>
-      <div className="container mt-4">
+      <div className="container">
         <ProjectHeader project={project} />
         <ProjectInfo project={project} />
         <ProjectMechanics project={project} />

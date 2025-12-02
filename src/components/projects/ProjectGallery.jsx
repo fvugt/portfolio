@@ -1,27 +1,39 @@
 import { useState } from "react";
 
+/**
+ * ProjectGallery - Image and video carousel for project media
+ * 
+ * Features:
+ * - Combines YouTube video (if exists) and screenshots into one slideshow
+ * - Video always appears first if present
+ * - Click image to open full size in new tab
+ */
 export default function ProjectGallery({ project }) {
   const { screenshots, youtube } = project;
 
-  // Build the unified slide list: video first (if present), then screenshots
+  // Build unified slide list: video first (if present), then screenshots
+  // Using spread operator (...) to combine arrays
   const slides = [
     ...(youtube ? [{ type: "video", src: youtube }] : []),
     ...screenshots.map((s) => ({ type: "image", src: s })),
   ];
 
+  // Track which slide is currently shown (0-based index)
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Move to next slide (wraps back to 0 at end)
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
   };
 
+  // Move to previous slide (wraps to last slide at beginning)
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   return (
     <div className="mb-4 ml-4 mr-4">
-      <h2 className="heading-md text-(--text)">Gallery</h2>
+      <h2 className="text-xl font-semibold text-(--text)">Gallery</h2>
 
       <div className="space-y-6 mt-4">
         {slides.length > 0 && (

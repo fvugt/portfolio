@@ -1,18 +1,38 @@
 export const siteConfig = {
+  // ========================================
+  // PERSONAL INFORMATION
+  // Change these to match your own details
+  // ========================================
+  
   name: "Jane Doe",
   role: "XR Developer",
   tagline: "Ik bouw interactieve XR-ervaringen die zich natuurlijk en intuïtief aanvoelen.",
 
+  // ========================================
+  // IMAGES & FILES
+  // Replace these URLs with your own images
+  // ========================================
+  
   aboutImage: "https://api.dicebear.com/7.x/notionists/png?seed=portfolio",
   cv: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
 
+  // ========================================
+  // CONTACT & SOCIAL LINKS
+  // Add your social media profile URLs here
+  // ========================================
+  
   socials: {
+    email: "jane.doe@example.com",
     github: "https://github.com/",
     linkedin: "https://linkedin.com/",
     itch: "https://itch.io/"
   },
 
-  // 🆕 XR-georiënteerde lange About Me
+  // ========================================
+  // ABOUT ME - Extended description
+  // Write a longer introduction about yourself
+  // ========================================
+  
   aboutLong: `
     Ik ben een XR Developer die energie krijgt van het bouwen van interactieve, 
     fysieke en intuïtieve ervaringen in VR en AR. Voor mij draait goede XR niet 
@@ -24,14 +44,18 @@ export const siteConfig = {
     over mijzelf te vertellen!
   `,
 
-  // 🆕 XR Soft Skills
+  // ========================================
+  // SKILLS - Customize to match your expertise
+  // ========================================
+  
+  // Soft skills: collaboration, communication, problem-solving
   softSkills: [
     "Samenwerken met artists",
     "Feedback geven & ontvangen",
     "Probleemoplossend denken"
   ],
 
-  // 🆕 XR Hard Skills
+  // Hard skills: technical abilities, tools, frameworks
   hardSkills: [
     "Unity & XR Interaction Toolkit",
     "C# Scripting",

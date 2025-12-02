@@ -5,7 +5,7 @@ export default function Contact() {
     <main>
       <div className="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
         
-        {/* HERO SECTION */}
+        {/* === HERO SECTION === */}
         <section className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-(--text)">
             Contact
@@ -15,7 +15,7 @@ export default function Contact() {
           </p>
         </section>
 
-        {/* CONTACT SECTION */}
+        {/* === SOCIAL LINKS === */}
         <section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* GitHub */}
@@ -87,7 +87,7 @@ export default function Contact() {
             <h3 className="text-2xl font-bold mb-3 text-(--text)">Interesse in samenwerken?</h3>
             <p className="text-(--muted) text-lg mb-8">Stuur me een berichtje - ik hoor graag van je!</p>
             <a 
-              href={`mailto:${siteConfig.email || 'contact@example.com'}`}
+              href={`mailto:${siteConfig.socials.email}`}
               className="
                 inline-flex items-center gap-3 px-10 py-5 rounded-xl
                 bg-(--accent) text-(--accent-text) font-bold text-lg

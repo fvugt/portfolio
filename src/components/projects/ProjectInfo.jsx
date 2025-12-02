@@ -1,5 +1,13 @@
+/**
+ * ProjectInfo - Displays project description and metadata
+ * 
+ * Layout:
+ * - Left side (2/3): Project description split into paragraphs
+ * - Right side (1/3): Details sidebar with role, timeline, tags, and action buttons
+ */
 export default function ProjectInfo({ project }) {
   // Split description into paragraphs using double newlines
+  // .trim() removes whitespace, .filter(Boolean) removes empty strings
   const paragraphs = project.description
     .split("\n\n")
     .map((p) => p.trim())
@@ -7,21 +15,23 @@ export default function ProjectInfo({ project }) {
 
   return (
     <div className="mb-4 border-b border-(--bordercolor) pb-8 last:border-0 ml-4 mr-4">
+      {/* Grid layout: 2 columns on desktop, stacks on mobile */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* LEFT COLUMN: heading + description (spans 2 columns) */}
+        {/* Description - takes 2 columns on desktop */}
         <div className="md:col-span-2 space-y-3">
-          <h2 className="heading-md text-(--text)">Over dit project</h2>
+          <h2 className="text-xl font-semibold text-(--text)">Over dit project</h2>
 
+          {/* Render each paragraph separately for better spacing */}
           {paragraphs.map((text, i) => (
-            <p key={i} className="body-text">
+            <p key={i} className="leading-relaxed text-(--muted)">
               {text}
             </p>
           ))}
         </div>
 
-        {/* RIGHT COLUMN: Details (aligned to top) */}
+        {/* Project details sidebar */}
         <div className="h-fit md:self-start">
-          <h3 className="heading-md mb-4 text-(--text) border-b border-(--bordercolor) pb-2">Details</h3>
+          <h3 className="text-xl font-semibold mb-4 text-(--text) border-b border-(--bordercolor) pb-2">Details</h3>
 
           <ul className="text-sm space-y-2 text-(--muted)">
             <li className="flex justify-between border-b border-(--bordercolor) pb-1">

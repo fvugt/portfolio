@@ -9,7 +9,7 @@ export default function ProjectHeader({ project }) {
 
       {/* Text overlay */}
       <div className="absolute bottom-4 left-4">
-        <h1 className="heading-xl text-white drop-shadow-md mb-1">{project.title}</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-md mb-1">{project.title}</h1>
 
         <p className="text-base text-gray-300 max-w-xl drop-shadow-sm font-medium">{project.tagline}</p>
       </div>

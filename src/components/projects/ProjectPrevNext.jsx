@@ -68,7 +68,7 @@ export default function ProjectPrevNext({ previous, next }) {
               className="group flex items-center gap-3 hover:text-(--accent) transition-colors max-w-[45%]"
             >
               <svg
-                className="w-5 h-5 flex-shrink-0 group-hover:-translate-x-1 transition-transform"
+                className="w-5 h-5 shrink-0 group-hover:-translate-x-1 transition-transform"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -97,7 +97,7 @@ export default function ProjectPrevNext({ previous, next }) {
                 <span className="font-semibold truncate">{next.title}</span>
               </div>
               <svg
-                className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform"
+                className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
